@@ -1,0 +1,147 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* Main card styles */
+.product-card {
+  width: 250px; /* 250px lapad */
+  height: 350px; /* 350px taas */
+  background-color: white; /* puting background */
+  border: 2px solid black; /* 2px itim na border */
+  margin: 50px auto 30px; /* gitna sa page */
+  padding: 15px; /* 15px space sa loob */
+  position: relative; /* para gumana yung absolute sa sale-badge */
+  text-align: center; /* gitna lahat ng text */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Bilog na SALE badge sa taas */
+.sale-badge {
+  width: 60px;
+  height: 60px;
+  background-color: red;
+  color: white;
+  border-radius: 50%; /* perfect circle */
+  line-height: 60px; /* para vertical center yung text */
+  font-weight: bold;
+  font-size: 0.9rem;
+
+  /* Para lumabas sa taas ng card */
+  position: absolute;
+  top: -20px; /* 20px angat sa taas ng card */
+  right: -20px; /* 20px labas sa kanan */
+  transform: rotate(15deg); /* tabingi konti para astig */
+}
+
+.product-card img {
+  width: 100%; /* sakto sa lapad ng card */
+  height: 200px; /* fixed height */
+  object-fit: cover; /* di mabanat yung image */
+  border-bottom: 1px solid #ddd; /* manipis na line sa baba */
+  padding: 0; /* tanggal padding para sagad */
+  margin-bottom: 10px;
+}
+
+.product-card h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+.price {
+  font-size: 2rem; /* malaking text */
+  color: red; /* pulang price */
+  font-weight: bold; /* makapal */
+  margin: 10px 0;
+}
+
+.old-price {
+  font-size: 1rem; /* mas maliit */
+  color: gray; /* kulay gray */
+  text-decoration: line-through; /* may guhit sa gitna */
+  margin-left: 10px; /* 10px space mula sa new price */
+}
+
+/* Show Answer Button */
+.show-btn {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 25px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  transition: background 0.3s ease;
+}
+
+.show-btn:hover {
+  background: #2563eb;
+}
+
+/* Code Box */
+.code-box {
+  max-width: 700px;
+  margin: 20px auto;
+  background: #1e293b;
+  border-radius: 10px;
+  padding: 20px;
+  display: none;
+}
+
+.code-box.show {
+  display: block;
+}
+
+.code-box h3 {
+  color: #fbbf24;
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-family: Arial, sans-serif;
+}
+
+pre {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  padding: 15px;
+  overflow-x: auto;
+  margin-bottom: 15px;
+}
+
+code {
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+/* Mobile */
+@media (max-width: 400px) {
+  .product-card {
+    width: 100%;
+    max-width: 250px;
+  }
+  code {
+    font-size: 11px;
+  }
+}

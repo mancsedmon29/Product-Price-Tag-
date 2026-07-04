@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Price Tag - Capstone 2.3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Product Card -->
+    <div class="product-card">
+        <div class="sale-badge">SALE!</div>
+        <img src="./images/earbuds.png" alt="Wireless Earbuds">
+        <h3>Wireless Earbuds</h3>
+        <p class="price">₱999 <span class="old-price">₱1999</span></p>
+    </div>
+
+    <!-- Show Answer Button -->
+    <button class="show-btn" onclick="toggleCode()">
+        📖 Show Answer / View Code
+    </button>
+
+    <!-- Hidden Code Section -->
+    <div class="code-box" id="codeBox">
+        <h3>HTML Code:</h3>
+        <pre><code>&lt;div class="product-card"&gt;
+  &lt;div class="sale-badge"&gt;SALE!&lt;/div&gt;
+  &lt;img src="product.jpg" alt="Wireless Earbuds"&gt;
+  &lt;h3&gt;Wireless Earbuds&lt;/h3&gt;
+  &lt;p class="price"&gt;₱999 &lt;span class="old-price"&gt;₱1999&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+        <h3>CSS Key Concepts:</h3>
+        <pre><code>.product-card {
+  width: 250px;
+  height: 350px;
+  background: white;
+  border: 2px solid black;
+  position: relative;
+  text-align: center;
+}
+
+.sale-badge {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 60px;
+  height: 60px;
+  background: red;
+  border-radius: 50%;
+  transform: rotate(15deg);
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: gray;
+}</code></pre>
+    </div>
+
+    <script>
+        function toggleCode() {
+            var box = document.getElementById('codeBox');
+            var btn = document.querySelector('.show-btn');
+            
+            if (box.classList.contains('show')) {
+                box.classList.remove('show');
+                btn.textContent = '📖 Show Answer / View Code';
+            } else {
+                box.classList.add('show');
+                btn.textContent = '❌ Hide Code';
+            }
+        }
+    </script>
+</body>
+</html>
