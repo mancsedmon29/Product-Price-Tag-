@@ -31,29 +31,120 @@
 &lt;/div&gt;</code></pre>
 
         <h3>CSS Key Concepts:</h3>
-        <pre><code>.product-card {
-  width: 250px;
-  height: 350px;
-  background: white;
-  border: 2px solid black;
-  position: relative;
-  text-align: center;
+        <pre><code>/* 1. LAYOUT & BOX MODEL */
+* {
+  margin: 0;              /* Tanggal default spacing */
+  padding: 0;             /* Tanggal default spacing */
+  box-sizing: border-box; /* Kasama na border/padding sa width/height */
+}
+
+.product-card {
+  width: 250px;           /* Lapad ng card */
+  height: 350px;          /* Taas ng card */
+  margin: 50px auto 30px; /* Top 50px, auto left/right = center, bottom 30px */
+  padding: 15px;          /* 15px space sa loob ng card */
+  border: 2px solid black;/* 2px solid na itim na border */
+}
+
+/* 2. POSITIONING */
+.product-card {
+  position: relative;     /* Parent reference para sa absolute child */
 }
 
 .sale-badge {
-  position: absolute;
-  top: -20px;
-  right: -20px;
-  width: 60px;
-  height: 60px;
-  background: red;
-  border-radius: 50%;
-  transform: rotate(15deg);
+  position: absolute;     /* Tatanggalin sa normal flow */
+  top: -20px;            /* 20px angat mula sa top ng parent */
+  right: -20px;          /* 20px labas mula sa right ng parent */
 }
 
+/* 3. DISPLAY & VISIBILITY */
+.show-btn {
+  display: block;         /* Gawing block element para gumana margin auto */
+}
+.code-box {
+  display: none;          /* Naka-hide by default */
+}
+.code-box.show {
+  display: block;         /* Ipapakita kapag may .show class */
+}
+
+/* 4. COLORS & BACKGROUND */
+body {
+  background-color: #f5f5f5; /* Light gray background ng page */
+}
+.product-card {
+  background-color: white;   /* Puting background ng card */
+}
+.price {
+  color: red;                /* Pulang text para sa sale price */
+}
 .old-price {
-  text-decoration: line-through;
-  color: gray;
+  color: gray;               /* Gray text para sa original price */
+}
+
+/* 5. TYPOGRAPHY */
+body {
+  font-family: Arial, sans-serif; /* Default font ng buong page */
+}
+.sale-badge {
+  font-weight: bold;       /* Makapal na text */
+  font-size: 0.9rem;      /* Medyo maliit na font size */
+  line-height: 60px;      /* Vertical center trick para sa single line text */
+}
+.price {
+  font-size: 2rem;        /* Malaking font para ma-highlight */
+}
+.old-price {
+  text-decoration: line-through; /* May guhit sa gitna = discount */
+}
+
+/* 6. IMAGES */
+.product-card img {
+  width: 100%;            /* Sakto sa lapad ng parent */
+  height: 200px;          /* Fixed height para pantay lahat */
+  object-fit: cover;      /* Crop image para di ma-stretch */
+  border-bottom: 1px solid #ddd; /* Manipis na divider line */
+}
+
+/* 7. EFFECTS & TRANSFORMS */
+.product-card {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Shadow para may depth */
+  transition: transform 0.3s ease;        /* Smooth animation sa hover */
+}
+.product-card:hover {
+  transform: translateY(-5px);            /* Angat ng 5px pag hinovor */
+}
+.sale-badge {
+  border-radius: 50%;     /* Perfect circle */
+  transform: rotate(15deg); /* Tabingi ng 15 degrees */
+}
+
+/* 8. ALIGNMENT */
+.product-card {
+  text-align: center;     /* Center lahat ng text sa loob */
+}
+.show-btn {
+  margin: 0 auto;         /* Center yung button horizontally */
+}
+
+/* 9. INTERACTIVE ELEMENTS */
+.show-btn {
+  cursor: pointer;        /* Gawing kamay yung mouse pag hinovor */
+  border: none;           /* Tanggal default border ng button */
+  border-radius: 8px;     /* Rounded corners */
+}
+
+/* 10. RESPONSIVE DESIGN */
+@media (max-width: 400px) {  /* Gumagana lang pag 400px pababa screen */
+  .product-card {
+    width: 100%;             /* Full width sa mobile */
+    max-width: 250px;        /* Pero hanggang 250px lang */
+  }
+}
+
+/* 11. OVERFLOW */
+pre {
+  overflow-x: auto;       /* Scroll horizontal pag mahaba yung code */
 }</code></pre>
     </div>
 
